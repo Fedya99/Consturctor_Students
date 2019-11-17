@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Student(){
+        var fio="Gadoev Firdavs Ibodulloevich";
+        var special="Computer Sciences";
+        var lecture={
+            name: "",
+            getName: function(){
+                return this.name;
+            },
+            setName: function lectureN(namel,i){
+                console.log("Лекция №"+i+"--->"+namel[i++]);
+                if(i<namel.length){
+                    lectureN(namel,i);
+                }
+                
+        this.name=namel;
+        return lectureN;
+            },
+            grade: null,
+            getGrade: function(){
+                return this.grade;
+            },
+            setGrade: function lectureG(gradel,j,sred){
+                console.log("Отценка по "+j+"-ой лекции--->"+gradel[j++]);
+                if(j<gradel.length) lectureG(gradel,j);
+                this.grade=gradel;
+                return lectureG;
+            },
+            setGradeSred: function sred(arr){
+                var sum=0;
+                for(i=0;i<arr.length;i++){
+                    sum=sum+arr[i];
+                }
+                return sum/arr.length;
+            }
+        }
+        lecture.setName(["History","Mathematic","Informatic","Geometry"],0);
+        lecture.setGrade(["5","4","3","2"],0);
+        console.log("Sredniy bal--->"+lecture.setGradeSred([5,4,3,2],0));
+        this.getfio=function(){
+            return fio;
+        }
+        this.setfio=function(name){
+            fio=name;
+        }
+        this.getspec=function(){
+            return special;
+        }
+        this.setspec=function(spec){
+            special=spec;
+        }
+        
+    }
+    var Students = new Student();
+    console.log(Students.setfio("FIO--->"+"Gadoev Ibodullo Ismatovich"));
+    console.log(Students.getfio());
+
+    console.log(Students.setspec("Special--->"+"Computer Sciences"));
+    console.log(Students.getspec());
+    </script>
+</body>
+</html>
